@@ -8,15 +8,53 @@ TO DO LIST by Chris Muh
 
 <head>
     <link rel="stylesheet" type="text/css" href="listPage.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
     <body>
-    
-        <h1>My  ccc list</h1>
         
+        <div class="wrapper"> 
+            <h1> Watch list </h1> 
 
-        <%=listItem%>
+            <div class="listWrap">
+                <div>  </div> 
+                <div class="listName"> 
+                    <h2> My list </h2> 
+                    <ul id="myList"> </ul>
+
+                    <% for(var i = 0; i < listItems.length; i++) { %>
+                       <div> <ul><span><i  onclick="changeColor(this)" id="heartIcon" class="material-icons love heartIcons"> favorite </i>
+                            </span><%= listItems[i] %>
+                            <span id="aniTrash" class="trash" style="cursor: pointer;">
+                                <span></span>
+                                <i></i>
+                            </span> 
+                            
+                        </ul>  
+                        </div>
+                      <% } %>
+                    
+                </div> 
+            </div>
+
+            <div class="add"></div>
+        </div>
 
     </body>
 
 </html>
+
+<script>
+    function changeColor(node){
+        var liked = true;
+        console.log(node);
+        if(node.classList.contains("liked")){
+            node.classList.remove("liked");
+          }
+          else{
+            node.classList.add("liked");
+         
+          }
+    };
+</script>

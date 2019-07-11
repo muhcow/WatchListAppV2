@@ -13,7 +13,8 @@ app.get("/",function(req,res){
     //res.send("heyo wuddup");
     //res.send("assets/listPage.html");
     //res.sendFile(path.join(__dirname + '/assets/listPage.html'));
-    res.render('listPage',{listItem:'yoyo'});
+    var listItems = ["hi","ok","wow"];
+    res.render('listPage',{listItems:listItems});
 }); 
 
 console.log("yo wuddup");
