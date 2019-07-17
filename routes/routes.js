@@ -14,13 +14,13 @@ router.post("/search",function(req,res){
     var animeName = req.body.searchBar;
     var searchResults;
     //jikan api request
-    request(`https://api.jikan.moe/v3/search/anime/1/?q=${animeName}`, { json: true }, (err, res, body) => {
+    request(`https://api.jikan.moe/v3/search/anime/1/?q=${animeName}`, { json: true }, (err, response, body) => {
         if (err) { return console.log(err); }
             //only return top 3 search results
             searchResults = body.results.slice(0,3);
             console.log(searchResults);
+            res.render('listPage',{listItems:null});
         });
-    res.send(req.body.searchBar);
 });
 
 module.exports = router;

@@ -16,33 +16,46 @@ TO DO LIST by Chris Muh
     <body>
         
         <div class="wrapper"> 
+
             <h1> Watch list </h1> 
             
-            <form id="myForm" method="post" action="/search">
-                <input  id="searchBar" type="text" name="searchBar">                
-            </form>
+            <div class="dropdown">
+                <form id="myForm" method="post" action="/search" onsubmit="search()">
+                    <input  id="searchBar" type="text" name="searchBar"> 
+                        <div class="dropdown-content">
+                            <div>
+                            <a href="#">Link 1</a>
+                            </div>
+                            <div>
+                            <a href="#">Link 2</a>
+                            </div>
+                            <div>
+                            <a href="#">Link 3</a>
+                            </div>
+                        </div>               
+                </form>
+            </div>
 
             <div class="listWrap">
                 <div>  </div> 
                 <div class="listName"> 
                     <h2> My list </h2> 
                     <ul id="myList"> </ul>
-
                     <% for(var i = 0; i < listItems.length; i++) { %>
                        <div> 
                             <ul>
                                 <span><i  onclick="changeColor(this)" id="heartIcon" class="material-icons love heartIcons"> favorite </i></span>
                                 <%= listItems[i] %>
-                                <span id="aniTrash" class="trash" style="cursor: pointer;">
+                                <span class="trash" style="cursor: pointer;">
                                     <span></span>
                                     <i></i>
                                 </span>           
                             </ul>  
                         </div>
-                      <% } %>
-                    
+                      <% } %>              
                 </div> 
             </div>
+
         </div>
 
     </body>
@@ -59,4 +72,11 @@ function changeColor(node){
         node.classList.add("liked");  
       }
 };
+
+function search(){
+    console.log("FKN YOOOOO");
+}
+
+
 </script>
+
