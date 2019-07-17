@@ -20,7 +20,7 @@ TO DO LIST by Chris Muh
             <h1> Watch list </h1> 
             
             <div class="dropdown">
-                <form id="myForm" method="post" action="/search" onsubmit="search()">
+                <form id="myForm" method="post" action="/search">
                     <input  id="searchBar" type="text" name="searchBar"> 
                         <div class="dropdown-content">
                             <div>
@@ -72,11 +72,5 @@ function changeColor(node){
         node.classList.add("liked");  
       }
 };
-
-function search(){
-    console.log("FKN YOOOOO");
-}
-
-
 </script>
 
