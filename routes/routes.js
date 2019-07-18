@@ -19,9 +19,7 @@ router.post("/search",function(req,res){
             //only return top 3 search results
             searchResults = body.results.slice(0,3);
             console.log(searchResults);
-            var listItems = ["hi","ok","wow"];
-            res.render('listPage',{listItems:listItems});
-            //res.render('listPage',{listItems:null});
+            res.render('listPage',{listItems:null});
         });
 });
 

@@ -19,28 +19,31 @@ TO DO LIST by Chris Muh
 
             <h1> Watch list </h1> 
             
-            <div class="dropdown">
-                <form id="myForm" method="post" action="/search">
-                    <input  id="searchBar" type="text" name="searchBar"> 
-                        <div class="dropdown-content">
-                            <div>
-                            <a href="#">Link 1</a>
-                            </div>
-                            <div>
-                            <a href="#">Link 2</a>
-                            </div>
-                            <div>
-                            <a href="#">Link 3</a>
-                            </div>
-                        </div>               
-                </form>
-            </div>
+            <form id="searchForm" method="post" action="/search">
+                <input  id="searchBar" type="text" name="searchBar">                
+            </form>
+
+            <form id="addForm" method="post" action="/add">
+                <div class="dropdown-content">
+                    <div>
+                    <a href="#">Link 1</a>
+                    <input type="submit" value="Submit">
+                    </div>
+                    <div>
+                    <a href="#">Link 2</a>
+                    </div>
+                    <div>
+                    <a href="#">Link 3</a>
+                    </div>
+                </div>
+            </form>
 
             <div class="listWrap">
                 <div>  </div> 
                 <div class="listName"> 
                     <h2> My list </h2> 
                     <ul id="myList"> </ul>
+                    <% if (listItems) { %>
                     <% for(var i = 0; i < listItems.length; i++) { %>
                        <div> 
                             <ul>
@@ -52,7 +55,8 @@ TO DO LIST by Chris Muh
                                 </span>           
                             </ul>  
                         </div>
-                      <% } %>              
+                      <% } %> 
+                      <% } %>             
                 </div> 
             </div>
 

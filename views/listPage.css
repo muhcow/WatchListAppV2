@@ -27,8 +27,7 @@ h1{
     grid-template-columns: 30% 70%;
 }
 
-
-#myForm{
+#searchForm{
   text-align: center;
 }    
 
@@ -48,13 +47,23 @@ h1{
   background-repeat: no-repeat;
   padding: 12px 20px 12px 70px;
 }
+
+#addForm {
+  position: relative;
+  text-align: center;
+}
+
 .dropdown-content a {
     color: black;
     padding: 12px 160px;
     text-decoration: none;
     display: inline-block;
     background-color: #f1f1f1;
-    
+  }
+
+.dropdown-content {
+    position: relative;
+    display: inline;
   }
 
 /*
