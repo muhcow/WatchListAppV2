@@ -10,6 +10,7 @@ TO DO LIST by Chris Muh
     <link rel="stylesheet" type="text/css" href="listPage.css">
     <link rel="stylesheet" type="text/css" href="icons.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="search.js"></script>
 </head>
 
@@ -25,11 +26,41 @@ TO DO LIST by Chris Muh
 
             <form id="addForm" method="post" action="/add">
                 <div class="dropdown-content">
-                    <div>
-                    <a href="#">Link 1</a>
-                    <input type="submit" value="Submit">
-                    </div>
-                    <div>
+                        <% if (searchItems) { %>
+                            <% for(var i = 0; i < searchItems.length; i++) { %>
+                                <form id="addForm" method="post" action="/add">
+                                <div class="searchElements">
+                                    <img class = "animeImage" src="<%= searchItems[i].image_url %>" alt=":C" >
+                                <div class= "animeInfo">
+                                <p><%=searchItems[i].title%></p>   
+                                <p><%=searchItems[i].synopsis%></p>
+                                <input type="text" name="id" value="<%=searchItems[i].mal_id%>" >
+                                </div>   
+                                    <button type="submit" value="Submit"> <i class="fa fa-plus"></i> </button>
+                                </div>
+                                </form>
+                            <% } %> 
+                        <% } %> 
+
+                    <div class="searchElements">
+                            <img class = "animeImage" src="https://cdn.myanimelist.net/images/anime/3/21914.jpg?s=f24ffd4aa107f8bdab7c696955447e6d" alt=":C" >
+                            <div class= "animeInfo"> 
+                                <p>Kodomo no Keijijougaku</p> 
+                                <p>A child whose head is numerals, a child who winds his own face and has it under his arm. What was left is his identity, a child whose eyes are provided by fishes, a child who lies down on the floor an...</p>
+                            </div>   
+                            <button type="submit" value="Submit"> <i class="fa fa-plus"></i> </button>
+                        </div>
+
+                        <div class="searchElements">
+                                <img class = "animeImage" src="https://cdn.myanimelist.net/images/anime/3/21914.jpg?s=f24ffd4aa107f8bdab7c696955447e6d" alt=":C" >
+                                <div class= "animeInfo"> 
+                                    <p>Kodomo no Keijijougaku</p> 
+                                    <p>A child whose head is numerals, a child who winds his own face and has it under his arm. What was left is his identity, a child whose eyes are provided by fishes, a child who lies down on the floor an...</p>
+                                </div>   
+                                <button class="addButton" type="submit" value="Submit"> <i class="fa fa-trash"></i> </button>
+                        </div>
+                    
+                    <div>   
                     <a href="#">Link 2</a>
                     </div>
                     <div>

@@ -5,7 +5,7 @@ const request = require('request');
 //homepage route
 router.get("/",function(req,res){
     var listItems = ["hi","ok","wow"];
-    res.render('listPage',{listItems:listItems});
+    res.render('listPage',{listItems:listItems, searchItems:null});
 }); 
 
 //return search results route
@@ -19,8 +19,13 @@ router.post("/search",function(req,res){
             //only return top 3 search results
             searchResults = body.results.slice(0,3);
             console.log(searchResults);
-            res.render('listPage',{listItems:null});
+            res.render('listPage',{listItems:null, searchItems:searchResults});
         });
+});
+
+//add chosen result to list
+router.post("/add",function(req,res){
+    console.log(req.body);
 });
 
 module.exports = router;
