@@ -24,8 +24,7 @@ TO DO LIST by Chris Muh
                 <input  id="searchBar" type="text" name="searchBar">                
             </form>
 
-            <form id="addForm" method="post" action="/add">
-                <div class="dropdown-content">
+            <div class="dropdown-content">
                         <% if (searchItems) { %>
                             <% for(var i = 0; i < searchItems.length; i++) { %>
                                 <form id="addForm" method="post" action="/add">
@@ -41,33 +40,8 @@ TO DO LIST by Chris Muh
                                 </form>
                             <% } %> 
                         <% } %> 
-
-                    <div class="searchElements">
-                            <img class = "animeImage" src="https://cdn.myanimelist.net/images/anime/3/21914.jpg?s=f24ffd4aa107f8bdab7c696955447e6d" alt=":C" >
-                            <div class= "animeInfo"> 
-                                <p>Kodomo no Keijijougaku</p> 
-                                <p>A child whose head is numerals, a child who winds his own face and has it under his arm. What was left is his identity, a child whose eyes are provided by fishes, a child who lies down on the floor an...</p>
-                            </div>   
-                            <button type="submit" value="Submit"> <i class="fa fa-plus"></i> </button>
-                        </div>
-
-                        <div class="searchElements">
-                                <img class = "animeImage" src="https://cdn.myanimelist.net/images/anime/3/21914.jpg?s=f24ffd4aa107f8bdab7c696955447e6d" alt=":C" >
-                                <div class= "animeInfo"> 
-                                    <p>Kodomo no Keijijougaku</p> 
-                                    <p>A child whose head is numerals, a child who winds his own face and has it under his arm. What was left is his identity, a child whose eyes are provided by fishes, a child who lies down on the floor an...</p>
-                                </div>   
-                                <button class="addButton" type="submit" value="Submit"> <i class="fa fa-trash"></i> </button>
-                        </div>
+            </div>
                     
-                    <div>   
-                    <a href="#">Link 2</a>
-                    </div>
-                    <div>
-                    <a href="#">Link 3</a>
-                    </div>
-                </div>
-            </form>
 
             <div class="listWrap">
                 <div>  </div> 
@@ -79,7 +53,7 @@ TO DO LIST by Chris Muh
                        <div> 
                             <ul>
                                 <span><i  onclick="changeColor(this)" id="heartIcon" class="material-icons love heartIcons"> favorite </i></span>
-                                <%= listItems[i] %>
+                                <%= listItems[i].title %>
                                 <span class="trash" style="cursor: pointer;">
                                     <span></span>
                                     <i></i>
